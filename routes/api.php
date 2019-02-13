@@ -13,9 +13,13 @@ use Illuminate\Http\Request;
 |
  */
 
-Route::middleware('auth:api')->get('/user', function (Request $request) {
-    return $request->user();
-});
+Route::get('categories/random/{count}', 'CategoryController@random');
+Route::get('categories', 'CategoryController@index');
+Route::get('categories/slug/{slug}', 'CategoryController@slug');
+
+Route::get('books/top/{count}', 'BookController@top');
+Route::get('books', 'BookController@index');
+Route::get('books/slug/{slug}', 'BookController@slug');
 
 Route::post('login', 'AuthController@login');
 Route::post('register', 'AuthController@register');
