@@ -10,7 +10,7 @@ class AuthController extends Controller
 {
     public function login(Request $request)
     {
-        $user    = User::where('email', '=', $request->email)->firstOrFail();
+        $user    = User::where('email', '=', $request->email)->first();
         $status  = "error";
         $message = "";
         $data    = null;
@@ -27,10 +27,10 @@ class AuthController extends Controller
                 $data = $user->toArray();
                 $code = 200;
             } else {
-                $message = "Login gagal, password salah";
+                $message = "Login gagal, username atau email tidak dikenali.";
             }
         } else {
-            $message = "Login gagal, username salah";
+            $message = "Login gagal, username atau email tidak dikenali.";
         }
         return response()->json([
             'status'  => $status,
