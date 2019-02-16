@@ -36,6 +36,7 @@ class BooksTableSeeder extends Seeder
                 'price'       => mt_rand(1, 10) * 50000,
                 'weight'      => 0.5,
                 'status'      => 'PUBLISH',
+                'stock'       => 100,
                 'created_at'  => Carbon\Carbon::now(),
             ];
         }

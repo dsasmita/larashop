@@ -20,6 +20,7 @@ Route::get('categories/slug/{slug}', 'CategoryController@slug');
 Route::get('books/top/{count}', 'BookController@top');
 Route::get('books', 'BookController@index');
 Route::get('books/slug/{slug}', 'BookController@slug');
+Route::get('books/search/{keyword}', 'BookController@search');
 
 Route::post('login', 'AuthController@login');
 Route::post('register', 'AuthController@register');
