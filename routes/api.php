@@ -25,7 +25,14 @@ Route::get('books/search/{keyword}', 'BookController@search');
 Route::post('login', 'AuthController@login');
 Route::post('register', 'AuthController@register');
 
+Route::get('provinces', 'ShopController@provinces');
+Route::get('cities', 'ShopController@cities');
+
+Route::get('couriers', 'ShopController@couriers');
+
 // private
 Route::middleware('auth:api')->group(function () {
     Route::post('logout', 'AuthController@logout');
+    Route::post('shipping', 'ShopController@shipping');
+    Route::post('services', 'ShopController@services');
 });
